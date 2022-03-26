@@ -1,5 +1,6 @@
-##To run the app, run on command line: 
+##To run the app, run on command line:
 npm run electron:serve
+
 ##How to create an app that uses both Electron and React:
 
 1. Change directory to your development folder: **cd ~/development**
