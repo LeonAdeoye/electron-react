@@ -1,3 +1,2 @@
-#To run the app, run command on a command line: 
-
-npm run electron:start
+#To run the app, run on command line: 
+npm run electron:serve
