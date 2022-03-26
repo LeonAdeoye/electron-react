@@ -2,6 +2,7 @@ const path = require('path');
 
 const { app, BrowserWindow } = require('electron');
 
+// Electron's libarray to enable IPC communication snd allow a React process to send events to the Electron process.
 require('@electron/remote/main').initialize();
 
 function createWindow() {
