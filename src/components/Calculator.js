@@ -5,11 +5,6 @@ import BoilingVerdict from "./BoilingVerdict.js";
 // When several components need to reflect the same changing data.
 // It is recommended to lift the shared state up to their closest common ancestor.
 
-const scaleNames = {
-    c: 'Celsius',
-    f: 'Fahrenheit'
-};
-
 // These two functions convert numbers. We will write another function that takes a string temperature
 // and a converter function as arguments and returns a string.
 // We will use it to calculate the value of one input based on the other input.
