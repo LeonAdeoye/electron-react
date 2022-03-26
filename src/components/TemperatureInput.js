@@ -12,11 +12,6 @@ const scaleNames = {
 // so can the custom TemperatureInput accept both temperature and onTemperatureChange props from its parent Calculator.
 class TemperatureInput extends React.Component
 {
-    constructor(props)
-    {
-        super(props)
-    }
-
     // When the TemperatureInput wants to update its temperature, it calls this.props.onTemperatureChange.
     // The onTemperatureChange prop will be provided together with the temperature prop by the parent Calculator component.
     // It will handle the change by modifying its own local state, thus re-rendering both inputs with the new values.
