@@ -86,7 +86,10 @@ app.on('activate', () =>
     }
   }
 ```
-10. To build files in the ./build directory run command: **npm run electron:build** 
+10. To build files in the ./build directory run command: **npm run electron:build**
+11. To run the app, run on command line: **npm run electron:serve**
+
+
  
 
 
