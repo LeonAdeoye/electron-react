@@ -7,7 +7,7 @@ npm run electron:serve
 2. Create a React app: **npx create-react-app electron-react**
 3. cd electron-react.
 4. Install Electron and other packages: **npm install electron concurrently wait-on cross-env**
-5. Add three scripts to the package.json file:
+5. Add three scripts to scripts section of the package.json file:
 ```
     "electron:serve": "concurrently -k \"cross-env BROWSER=none npm run start\" \"npm run electron:start\"",
     "electron:build": "npm run build && electron-builder -c.extraMetadata.main=build/main.js",
@@ -19,7 +19,7 @@ Since we don't want React to open the app in the browser we can use the **cross-
 
 We use the **wait-on npm package** to make sure React is running on port 3000 before we start Electron.
 
-6 . When Electron starts it will look in the package.json file for the JavaScript entry point. Create a main.js file in the public folder and set the main property to it:
+6. When Electron starts it will look in the package.json file for the JavaScript entry point. Create a main.js file in the public folder and set the main property to it:
 ```
 "main": "public/main.js",*
 "homepage": "./",*
@@ -69,7 +69,7 @@ app.on('activate', () =>
     }
 });
 ```
-8. Install build npm packages: **npm install electron-builder electron-is-dev**
+8. Install build npm packages: **npm install electron-builder electron-is-dev @electron/remote**
 9. Add a build section to the package.json file:
 ```
 "build": {
@@ -86,8 +86,42 @@ app.on('activate', () =>
     }
   }
 ```
-10. To build files in the ./build directory run command: **npm run electron:build**
-11. To run the app, run on command line: **npm run electron:serve**
+10. Delete the following redundant files:
+```
+    public/electron.js
+    public/preload.js
+    public/reportWebVitals.js
+    public/logo192.png
+    public/logo512.png
+    public/manifest.json
+    public/robots.txt
+    public/favicon.ico
+    src/App.css
+    src/App.test.js
+    src/index.css
+    src/logo.svg
+    src/reportWebVitals.js
+    src/setupTests.js
+```
+
+11. Remove the above deleted file references from index.html and simplify html:
+```
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>INSERT APP NAME HERE</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
+```
+
+12. To build files in the ./build directory run command: **npm run electron:build**
+
+13. To run the app, run on command line: **npm run electron:serve**
 
 
  
